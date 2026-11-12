@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CaseBreak Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <div class="brand-mark">CB</div>
+          <div>
+            <p class="eyebrow">Counter-Strike Market Demo</p>
+            <h1>CaseBreak Labs</h1>
+          </div>
+        </div>
+
+        <div class="topbar-stats">
+          <div class="stat-pill wallet-pill">
+            <span class="label">Wallet</span>
+            <strong id="walletDisplay">$0</strong>
+          </div>
+          <div class="stat-pill level-pill">
+            <span class="label">Level</span>
+            <strong id="levelDisplay">1</strong>
+          </div>
+          <div class="stat-pill value-pill">
+            <span class="label">Inventory</span>
+            <strong id="inventoryValueDisplay">$0</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="app-grid">
+        <aside class="panel cases-panel">
+          <div class="panel-heading">
+            <h2>Cases</h2>
+            <button id="refreshMarketButton" class="secondary-button">Refresh prices</button>
+          </div>
+          <div id="caseList" class="case-list" aria-live="polite"></div>
+        </aside>
+
+        <section class="panel opener-panel">
+          <div class="panel-heading">
+            <h2 id="currentCaseTitle">Open a case</h2>
+            <span id="currentCaseBadge" class="case-badge">Case</span>
+          </div>
+
+          <div class="case-hero" id="caseHero">
+            <div class="case-visual" id="caseVisual">
+              <div class="case-glow"></div>
+              <div class="case-shape"></div>
+            </div>
+            <div class="case-info">
+              <p class="section-kicker">Selected case</p>
+              <h3 id="caseName">Chroma Case</h3>
+              <p id="caseDescription">A reliable everyday opener with a balanced drop table.</p>
+              <div class="case-pricing">
+                <span>Market price</span>
+                <strong id="casePrice">$0</strong>
+              </div>
+              <div class="case-meta-row">
+                <span>Drop chance</span>
+                <strong id="caseDropChance">-</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button id="openCaseButton" class="primary-button">Open case</button>
+            <button id="quickCashButton" class="secondary-button">Quick cash +$150</button>
+          </div>
+
+          <div id="resultDisplay" class="result-display" aria-live="polite">
+            <div class="empty-state">No result yet. Start opening cases.</div>
+          </div>
+        </section>
+
+        <aside class="panel side-panel">
+          <div class="panel-heading">
+            <h2>Progress</h2>
+          </div>
+
+          <div class="progress-card xp-card">
+            <div class="progress-row">
+              <span>XP</span>
+              <strong id="xpDisplay">0 / 100</strong>
+            </div>
+            <div class="progress-bar">
+              <span id="xpBar"></span>
+            </div>
+          </div>
+
+          <div class="progress-card stats-grid">
+            <div>
+              <span class="muted">Cases opened</span>
+              <strong id="casesOpenedDisplay">0</strong>
+            </div>
+            <div>
+              <span class="muted">Sold</span>
+              <strong id="soldTotalDisplay">$0</strong>
+            </div>
+            <div>
+              <span class="muted">Best pull</span>
+              <strong id="bestPullDisplay">$0</strong>
+            </div>
+            <div>
+              <span class="muted">Daily bonus</span>
+              <strong id="dailyBonusDisplay">Locked</strong>
+            </div>
+          </div>
+
+          <div class="action-stack">
+            <button id="dailyBonusButton" class="secondary-button full-width">Claim daily bonus</button>
+            <button id="resetButton" class="ghost-button full-width">Reset progress</button>
+          </div>
+        </aside>
+
+        <section class="panel inventory-panel">
+          <div class="panel-heading">
+            <h2>Inventory</h2>
+            <span id="inventoryCount" class="pill-count">0 items</span>
+          </div>
+          <div id="inventoryList" class="inventory-list"></div>
+        </section>
+
+        <section class="panel alerts-panel">
+          <div class="panel-heading">
+            <h2>Alerts</h2>
+          </div>
+          <div id="alertList" class="alert-list" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

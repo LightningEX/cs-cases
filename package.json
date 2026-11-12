@@ -1,0 +1,42 @@
+# CaseBreak Labs
+
+A Vercel-friendly CS2-style case-opening demo with a dummy wallet, persistent inventory, sell flow, progression, and live Steam market lookups for selected item names.
+
+## Features
+
+- Case selection and opening loop
+- Persistent local storage save data
+- Dummy wallet with quick cash and daily bonus paths
+- Inventory panel with sell actions
+- Price alerting for individual items
+- Inventory value tracking and market-value drift alerts
+- Serverless price fetch using the Steam Community Market price overview endpoint
+
+## Local development
+
+Open the project in a static web server or run Vercel locally:
+
+```bash
+npx vercel dev
+```
+
+Then visit the local URL that Vercel prints in the terminal.
+
+## Deploy to Vercel
+
+1. Push this repository to GitHub
+2. Import it into Vercel
+3. Use the default configuration
+4. Deploy
+
+The app is built as a static front end with a Vercel API route at `/api/prices` for fetching price data.
+
+## Notes
+
+- This is a dummy, non-monetized case-opening page for demo/prototyping.
+- Steam prices are fetched through the public market overview endpoint and are not guaranteed to be available for every item or name combination.
+- If a price lookup fails, the page falls back to built-in sample prices.
+
+## Important
+
+This project is intended for a mock CS2 experience and not for real gambling or financial use.
