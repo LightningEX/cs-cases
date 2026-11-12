@@ -1,0 +1,9 @@
+{
+  "name": "casebreak-labs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A dummy CS2 case-opening demo for Vercel.",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
